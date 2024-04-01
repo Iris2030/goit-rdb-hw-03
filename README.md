@@ -1,30 +1,46 @@
 ДЗ3_Бажинова_Ірина_Іванівна
 
-1.1_____________________________________
+1.1___________________________________
+
 SELECT * FROM products
 
 
-1.2_____________________________________
+1.2___________________________________
+
 SELECT name, phone FROM shippers;
 
 
-2_____________________________________
+2___________________________________
+
 SELECT      
-AVG(price) AS average_price,     
-MAX(price) AS max_price,     
-MIN(price) AS min_price 
+    AVG(price) AS average_price,     
+    MAX(price) AS max_price,     
+    MIN(price) AS min_price 
 FROM      
-Products;
+    Products;
 
 
-3_____________________________________
+3___________________________________
+
 SELECT DISTINCT  category_id, price 
 FROM products 
 ORDER BY price DESC 
 LIMIT 10;
 
 
-4_____________________________________
+4___________________________________
 SELECT COUNT(*) AS product_count
 FROM products
 WHERE price BETWEEN 20 AND 100;
+
+
+5___________________________________
+
+SELECT      
+    supplier_id,     
+COUNT(*) AS product_count,    
+AVG(price) AS average_price 
+FROM      
+    products 
+GROUP BY      
+    supplier_id;
